@@ -1,9 +1,10 @@
-name: Greeting Workflow
+name: Python CI
 on: [push]
 
 jobs:
-  say-hello:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Run a greeting
-        run: echo "The CI pipeline has successfully started!"
+      - uses: actions/checkout@v4
+      - name: Run Python Test
+        run: python3 test_calc.py
